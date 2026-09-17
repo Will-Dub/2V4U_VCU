@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "gpio.h"
+#include "App.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -89,7 +90,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  App_Init();
   /* USER CODE END 2 */
 
   /* Initialize leds */
@@ -113,6 +114,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    App_Run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
