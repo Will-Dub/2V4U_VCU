@@ -5,5 +5,6 @@ using namespace App::Logic;
 void VcuStateInit::onEnter() {}
 
 VcuStateId VcuStateInit::update(const VcuInputs &inputs, VcuOutputs &outputs) {
+  outputs.lights.boardLed = true;
   return VcuStateId::SAME;
 }

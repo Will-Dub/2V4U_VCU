@@ -3,10 +3,18 @@
 
 namespace App::Logic {
 
-enum class VcuStateId { INIT, STANDBY, DRIVE, FAULT, SAME };
+enum class VcuStateId { INIT, PARK, DRIVE, FAULT, SAME };
 
-struct VcuInputs {};
+struct VcuInputs {
+  struct {
+    bool boardButton;
+  } buttons;
+};
 
-struct VcuOutputs {};
+struct VcuOutputs {
+  struct {
+    bool boardLed;
+  } lights;
+};
 
 } // namespace App::Logic
