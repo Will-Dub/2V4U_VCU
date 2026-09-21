@@ -7,14 +7,46 @@ enum class VcuStateId { INIT, PARK, DRIVE, FAULT, SAME };
 
 struct VcuInputs {
   struct {
-    bool boardButton;
-  } buttons;
+    bool boardButtonPressed;
+    bool startButtonPressed;
+    bool emergencyStopPressed;
+    bool brakePressed;
+    uint16_t pedalRawAdc;
+  } pilot;
+
+  struct {
+    bool isAlive;
+    int32_t erpm;
+    float motorCurrent;
+    float inputCurrent;
+    float dutyCycle;
+    float inputVoltage;
+    float mosfetTemp;
+    float motorTemp;
+    uint8_t faultCode;
+
+    float ampHours;
+    float ampHoursCharged;
+    float wattHours;
+    float wattHoursCharged;
+  } vesc;
 };
 
 struct VcuOutputs {
   struct {
+    bool prechargeRelay;
+    bool contactor;
+  } power;
+
+  struct {
+    bool enableMotor;
+    float targetAmp;
+  } motor;
+
+  struct {
     bool boardLed;
+    bool errorLight;
   } lights;
 };
 
-} // namespace App::Logic
+}; // namespace App::Logic
