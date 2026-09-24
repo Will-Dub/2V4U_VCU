@@ -72,6 +72,10 @@ void Error_Handler(void);
 #define RCC_OSC_OUT_GPIO_Port GPIOF
 #define BOARD_LED_Pin GPIO_PIN_5
 #define BOARD_LED_GPIO_Port GPIOA
+#define VESC_CAN_RX_Pin GPIO_PIN_11
+#define VESC_CAN_RX_GPIO_Port GPIOA
+#define VESC_CAN_TX_Pin GPIO_PIN_12
+#define VESC_CAN_TX_GPIO_Port GPIOA
 #define T_SWDIO_Pin GPIO_PIN_13
 #define T_SWDIO_GPIO_Port GPIOA
 #define T_SWCLK_Pin GPIO_PIN_14
