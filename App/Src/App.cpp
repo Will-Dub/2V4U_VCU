@@ -1,4 +1,5 @@
 #include "App.h"
+#include "Drivers/VescCanDriver.hpp"
 #include "Logic/VcuStateInit.hpp"
 #include "VcuController.hpp"
 #include "VcuStruct.hpp"
@@ -6,7 +7,7 @@
 
 static App::Logic::VcuController vcuController;
 
-extern "C" void App_Init(void) {}
+extern "C" void App_Init(void) { App::Drivers::vescDriver.init(); }
 
 extern "C" void App_Run(void) {
   App::Logic::VcuOutputs outputs{};

@@ -68,11 +68,13 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Inc/Drivers
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Inc/Logic
 )
 
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/App.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/Drivers/VescCanDriver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/Logic/VcuStateInit.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/Logic/VcuStatePark.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/Logic/VcuStateDrive.cpp
